@@ -27,6 +27,11 @@ public class CustomerForm extends javax.swing.JFrame {
         initComponents();
        
         this.mainform = mainform;
+        
+        jTextField1.setName("First Name");
+        jTextField2.setName("Last Name");
+        jTextField3.setName("Email");
+        jTextField4.setName("Customer ID number");
     }
 
     private CustomerForm() {
@@ -196,19 +201,19 @@ public class CustomerForm extends javax.swing.JFrame {
         //if the validator returns true then assign the value of the text field to the object
         
         //check first name
-        Validator.isValidName(jTextField1);
+        if(Validator.isValidName(jTextField1)){
             C.setFirstName(jTextField1.getText());
-        
+        }
         
         //check last name
-        Validator.isValidName(jTextField2);
+        if(Validator.isValidName(jTextField2)){
             C.setLastName(jTextField2.getText());
-        
+        }
         
         //check email
-        Validator.isValidEmail(jTextField3);
+        if (Validator.isValidEmail(jTextField3)){
             C.setEmailaddr(jTextField3.getText()); 
-        
+        }
         //Cust ID
         
         C.setCustID(jTextField4.getText());
